@@ -5,6 +5,7 @@ public class HelloMaven {
         System.out.println("hello maven");
         System.out.println("hello maven");
         System.out.println("this is hot-fix,hello master");
+        System.out.println("hot-fix test");
 
     }
 }
