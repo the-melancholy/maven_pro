@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.zjc</groupId>
+  <artifactId>javase-maven</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<!--    java编译的JKD版本-->
+    <maven.compiler.source>1.8</maven.compiler.source>
+<!--    java运行的JDK版本-->
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+<!--      scope表示依赖的使用范围，有compile,test,provided,默认为compile-->
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+<!--  maven编译后只会将resources文件夹中的文件导入target/classes文件夹中，
+  <resources>中配置使得java下的文件编译完成后导入target中的classes文件夹中-->
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
+  </build>
+</project>
